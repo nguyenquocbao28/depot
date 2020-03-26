@@ -54,7 +54,39 @@ class LineItemsController < ApplicationController
       end
     end
   end
+# ----------------------------------------------
+# def decrease
+#   product = Product.find(params[:product_id])
+#   @line_item = @cart.remove_product(product)
 
+#   respond_to do |format|
+#     if @line_item.save
+#       format.html { redirect_to cart_path, notice: 'Line item was successfully updated.' }
+#       format.js
+#       format.json { render :show, status: :ok, location: @line_item }
+#     else
+#       format.html { render :edit }
+#       format.json { render json: @line_item.errors, status: :unprocessable_entity }
+#     end
+#   end
+# end
+
+# def increase
+#   product = Product.find(params[:product_id])
+#   @line_item = @cart.add_product(product)
+
+#   respond_to do |format|
+#     if @line_item.save
+#       format.html { redirect_to :back, notice: 'Line item was successfully updated.' }
+#       format.js
+#       format.json { render :show, status: :ok, location: @line_item }
+#     else
+#       format.html { render :edit }
+#       format.json { render json: @line_item.errors, status: :unprocessable_entity }
+#     end
+#   end
+# end
+# --------------------------------------------  
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
@@ -64,6 +96,9 @@ class LineItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
