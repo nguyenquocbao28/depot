@@ -19,10 +19,6 @@ Rails.application.routes.draw do
     root 'store#index', as: 'store_index', via: :all
   end  
 
-  # resources :line_items do
-  #   put 'decrease', on: :member
-  #   put 'increase', on: :member
-  # end
   # For details on the DSL available within this file, see
   # http://guides.rubyonrails.org/routing.html
 end
