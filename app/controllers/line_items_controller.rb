@@ -48,18 +48,18 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1.json
   def update
     respond_to do |format|
-      # if @line_item.update(line_item_params)
-      #   format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
-      #   format.json { render :show, status: :ok, location: @line_item }
-      @line_item = LineItem.find_by(id: params[:id])
-      num = @line_item.quantity - 1
-      if @line_item.update(quantity: num)
-        format.html { redirect_to store_index_url }
-        format.js { @current_item = @line_item }
-        format.json {
-          render :show,
-                 status: :created, location: @line_item
-        }
+      if @line_item.update(line_item_params)
+        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.json { render :show, status: :ok, location: @line_item }
+      # @line_item = LineItem.find_by(id: params[:id])
+      # num = @line_item.quantity - 1
+      # if @line_item.update(quantity: num)
+      #   format.html { redirect_to @line_item }
+      #   format.js { @current_item = @line_item }
+      #   format.json {
+      #     render :show,
+      #            status: :created, location: @line_item
+      #   }
       else
         format.html { render :edit }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }

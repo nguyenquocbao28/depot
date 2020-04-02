@@ -12,7 +12,6 @@ application up and running.
 1. Check the repository: git clone https://github.com/nguyenquocbao28/depot.git
 2. Create and set up the database
     cd depot
-    yarn install --check-files
     rake db:create
     rake db:migrate
     rails db:seed
